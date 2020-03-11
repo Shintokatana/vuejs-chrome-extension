@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Vuejs extension",
+  "description": "silence is golden...",
+  "version": "9.0",
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_icon": "icon16.png"
+  },
+  "permissions": ["activeTab", "storage", "identity"],
+  "content_scripts": [
+    {
+      "js": ["main.bundle.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "scripts": ["background.bundle.js"],
+    "persistent": false
+  }
+}
